@@ -18,21 +18,18 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.ResourceBundle;
 
+/**
+ * A controller class responsible for handling all the interactive actions like clicking on the objects,
+ * selecting cards, drawing more cards, animating views, using the UI controls etc.
+ */
 public class CrazyEightsReactiveController {
 
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Controller class fields ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     //A bunch of FXML objects initialization statements
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     private HBox box1;
@@ -131,7 +128,7 @@ public class CrazyEightsReactiveController {
         ImageView imageView = createCardView(card, pane);
         setupCardView(card, imageView, playerReactive);
         pane.getChildren().add(imageView);
-        animateCardDeal(deckImg, imageView);
+        animateCardDeal(imageView);
     }
 
 
@@ -152,10 +149,9 @@ public class CrazyEightsReactiveController {
 
     /**
      * Called to animate when a card is added to hand
-     * @param from the Node FROM which the card will be animated
      * @param to the Node where the card will be
      */
-    private void animateCardDeal(Node from, Node to) {
+    private void animateCardDeal(Node to) {
         to.setVisible(false);
         ImageView animationIV = new ImageView();
         animationIV.setImage(CardReactive.getCardBack());
@@ -354,7 +350,7 @@ public class CrazyEightsReactiveController {
      * if the list of selected cards is empty, an alert is shown
      */
     @FXML
-    void onConfirmedClicked(ActionEvent event) {
+    void onConfirmedClicked() {
         if (gameModel.getInteractivePlayer().getSelectedCards().size() == 0) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Please select a card!");
@@ -368,7 +364,7 @@ public class CrazyEightsReactiveController {
      * when a player clicked the pass button the turn is passed on to the next player
      */
     @FXML
-    void onPassClicked(ActionEvent event) {
+    void onPassClicked() {
         gameModel.nextPlayerTurn();
     }
 
@@ -537,7 +533,7 @@ public class CrazyEightsReactiveController {
     }
 
     /**
-     * when the player clicked exit button the the game window is closed
+     * when the player clicks the exit button the the game window is being closed
      */
     public void onExitClicked(ActionEvent actionEvent) {
         Stage stage = (Stage) exitButton.getScene().getWindow();

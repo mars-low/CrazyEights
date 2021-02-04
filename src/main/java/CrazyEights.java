@@ -6,6 +6,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * A basic JavaFX app starting class, responsible for setting up a new scene and connecting it to the fxml file
+ */
 public class CrazyEights extends Application {
 
     public static void main(String[] args) {
