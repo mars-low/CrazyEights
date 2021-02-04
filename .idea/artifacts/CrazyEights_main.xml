@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="CrazyEights.main">
+    <output-path>$PROJECT_DIR$/out/artifacts/CrazyEights_main</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="CrazyEights" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="CrazyEights_main.jar">
+        <element id="module-output" name="CrazyEights.main" />
+      </element>
+    </root>
+  </artifact>
+</component>
