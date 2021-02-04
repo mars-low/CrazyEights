@@ -3,7 +3,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * This enum represents suit of the card.
+ * This enum represents suit of the card .
  */
 @Getter
 @AllArgsConstructor
